@@ -1,0 +1,27 @@
+[
+  {
+    "long_name" : "Ranch Road",
+    "short_name" : "FM 1210",
+    "types" : [ "route" ]
+  },
+  {
+    "long_name" : "Dawson County",
+    "short_name" : "Dawson County",
+    "types" : [ "administrative_area_level_2", "political" ]
+  },
+  {
+    "long_name" : "Texas",
+    "short_name" : "TX",
+    "types" : [ "administrative_area_level_1", "political" ]
+  },
+  {
+    "long_name" : "Соединенные Штаты Америки",
+    "short_name" : "US",
+    "types" : [ "country", "political" ]
+  },
+  {
+    "long_name" : "79331",
+    "short_name" : "79331",
+    "types" : [ "postal_code" ]
+  }
+]

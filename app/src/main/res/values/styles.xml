@@ -1,0 +1,56 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="android:textColor">@color/colorText</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Toolbar" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="DialogFullScreen" parent="android:Theme.Black.NoTitleBar.Fullscreen">
+        <item name="android:padding">0dp</item>
+        <item name="backgroundColor">@android:color/black</item>
+    </style>
+    
+    <style name="TextMedium">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextRegular">
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="H1_regular" parent="TextRegular">
+        <item name="android:textColor">@color/colorText</item>
+        <item name="android:textSize">32sp</item>
+    </style>
+
+    <style name="H2_regular" parent="TextRegular">
+        <item name="android:textColor">@color/colorText</item>
+        <item name="android:textSize">24sp</item>
+    </style>
+
+    <style name="H5_medium" parent="TextMedium">
+        <item name="android:textColor">@color/colorText</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="Tags" parent="TextRegular">
+        <item name="android:textColor">@color/colorText</item>
+        <item name="android:textSize">9sp</item>
+    </style>
+
+    <style name="Paragraph" parent="TextRegular">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">@color/colorText</item>
+    </style>
+
+    <style name="ParagraphSecondary" parent="TextRegular">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/colorText</item>
+    </style>
+</resources>

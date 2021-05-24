@@ -1,0 +1,192 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+apply plugin: "androidx.navigation.safeargs.kotlin"
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.2"
+
+    defaultConfig {
+        applicationId "com.tiparo.tripway"
+        minSdkVersion 21
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+
+        def properties = new Properties()
+        properties.load(project.rootProject.file("local.properties").newDataInputStream())
+        def localServerHost = properties.getProperty("serverHost")
+        def serverHost = "http://arcane-mountain-80830.herokuapp.com:80/"
+        if (localServerHost != null)
+            serverHost = localServerHost
+
+        buildConfigField "String", "BASE_URL", "\"$serverHost\""
+        buildConfigField "String", "GOOGLE_MAPS_URL", "\"https://maps.googleapis.com/\""
+        buildConfigField "String", "GOOGLE_MAPS_KEY",
+                "\"${project.findProperty("GOOGLE_MAPS_API_KEY")}\""
+        resValue "string", "google_maps_key",
+                (project.findProperty("GOOGLE_MAPS_API_KEY") ?: "")
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        targetCompatibility = "8"
+        sourceCompatibility = "8"
+    }
+
+    dataBinding {
+        enabled = true
+    }
+
+    kotlinOptions { jvmTarget = "1.8" }
+
+    packagingOptions {
+        exclude 'META-INF/AL2.0'
+        exclude 'META-INF/LGPL2.1'
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.core:core-ktx:1.3.2'
+    implementation "androidx.fragment:fragment-ktx:1.3.3"
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1'
+    implementation 'androidx.annotation:annotation:1.2.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation "androidx.exifinterface:exifinterface:1.3.2"
+    implementation 'com.google.android.material:material:1.3.0'
+
+    implementation 'com.squareup.retrofit2:retrofit:2.8.1'
+    implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
+    implementation 'com.squareup.okhttp3:okhttp:4.9.1'
+
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.4'
+    implementation 'com.jakewharton.timber:timber:4.7.1'
+
+    // Dependencies for local unit tests
+    testImplementation 'junit:junit:4.13'
+    testImplementation "androidx.arch.core:core-testing:2.1.0"
+    testImplementation "org.mockito:mockito-android:3.3.3"
+    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.6"
+    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.3.6"
+    testImplementation("com.squareup.okhttp3:mockwebserver:4.4.0")
+
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.6"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.3.6"
+
+// Dependencies for Android unit tests
+    androidTestImplementation "junit:junit:4.13"
+    androidTestImplementation "org.mockito:mockito-android:3.3.3"
+    androidTestImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.6"
+    androidTestImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.3.6"
+
+    androidTestImplementation 'androidx.arch.core:core-testing:2.1.0'
+    androidTestImplementation 'com.squareup.okhttp3:mockwebserver:4.4.0'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+    // AndroidX Test - JVM testing
+    testImplementation "androidx.test:core-ktx:1.2.0"
+    testImplementation "androidx.test.ext:junit-ktx:1.1.1"
+    implementation "androidx.test:core:1.2.0"
+
+    // AndroidX Test - Instrumented testing
+    androidTestImplementation "androidx.test:core-ktx:1.2.0"
+    androidTestImplementation "androidx.test.ext:junit-ktx:1.1.1"
+    androidTestImplementation "androidx.arch.core:core-testing:1.2.0"
+}
+
+ext {
+    androidXTestCoreVersion = '1.2.0'
+    androidXTestExtKotlinRunnerVersion = '1.1.1'
+    archTestingVersion = '2.1.0'
+    mockitoVersion = '3.3.1'
+    coroutinesVersion = '1.3.6'
+    junitVersion = '4.12'
+}
+
+dependencies {
+    def nav_version = "2.3.0-alpha04"
+
+    // Kotlin
+    implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
+    implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
+
+    // Dynamic Feature Module Support
+    implementation "androidx.navigation:navigation-dynamic-features-fragment:$nav_version"
+
+    // Testing Navigation
+    androidTestImplementation "androidx.navigation:navigation-testing:$nav_version"
+}
+
+dependencies {
+    def room_version = "2.2.5"
+
+    implementation "androidx.room:room-runtime:$room_version"
+    kapt "androidx.room:room-compiler:$room_version"
+    // For Kotlin use kapt instead of annotationProcessor
+
+    // optional - Kotlin Extensions and Coroutines support for Room
+    implementation "androidx.room:room-ktx:$room_version"
+
+    // Test helpers
+    testImplementation "androidx.room:room-testing:$room_version"
+}
+
+dependencies {
+    def dagger_version = "2.27"
+    implementation "com.google.dagger:dagger:$dagger_version"
+    kapt "com.google.dagger:dagger-compiler:$dagger_version"
+    implementation "com.google.dagger:dagger-android-support:$dagger_version"
+    // if you use the support libraries
+    annotationProcessor "com.google.dagger:dagger-android-processor:$dagger_version"
+}
+
+dependencies {
+    implementation 'com.google.android.gms:play-services-auth:19.0.0'
+    implementation 'com.google.android.gms:play-services-maps:17.0.0'
+    implementation 'com.google.android.libraries.places:places:2.4.0'
+
+    implementation 'com.google.firebase:firebase-firestore:22.1.2'
+    implementation 'com.google.firebase:firebase-auth:20.0.3'
+    // Import the Firebase BoM
+    implementation platform('com.google.firebase:firebase-bom:26.7.0')
+    // Declare the dependencies for the desired Firebase products
+    implementation 'com.google.firebase:firebase-firestore-ktx'
+}
+
+dependencies {
+    implementation 'com.zhihu.android:matisse:0.5.3-beta3'
+    implementation 'com.github.chrisbanes:PhotoView:2.3.0'
+    implementation 'com.github.bumptech.glide:glide:4.10.0'
+    implementation 'com.facebook.fresco:fresco:2.4.0'
+}
+
+dependencies {
+    def rxJavaVersion="2.2.21"
+    def rxKotlinVersion="2.4.0"
+    def rxAndroidVersion="2.1.1"
+    def rxJavaAdapterVersion="1.0.0"
+
+    implementation "io.reactivex.rxjava2:rxjava:$rxJavaVersion"
+    implementation "io.reactivex.rxjava2:rxandroid:$rxAndroidVersion"
+    implementation "io.reactivex.rxjava2:rxkotlin:$rxKotlinVersion"
+    implementation "com.jakewharton.retrofit:retrofit2-rxjava2-adapter:$rxJavaAdapterVersion"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:2.6.0"
+}

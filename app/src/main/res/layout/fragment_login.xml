@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="match_parent"
+            android:layout_height="240dp"
+            android:padding="72dp"
+            android:src="@drawable/fragment_login_logo"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/et_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:hint="@string/email"
+            android:textSize="15sp"
+            app:layout_constraintTop_toBottomOf="@id/logo"
+            tools:text="email" />
+
+        <EditText
+            android:id="@+id/et_nickname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:hint="@string/nickname"
+            android:visibility="gone"
+            android:textSize="15sp"
+            app:layout_constraintTop_toBottomOf="@id/et_email"
+            tools:text="Никнейм" />
+
+        <EditText
+            android:id="@+id/et_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:hint="@string/password"
+            android:inputType="textPassword"
+            android:textSize="15sp"
+            app:layout_constraintTop_toBottomOf="@id/et_nickname"
+            tools:text="password" />
+
+
+        <Button
+            android:id="@+id/button_sign_in"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sign_in"
+            android:textSize="14sp"
+            app:layout_constraintLeft_toLeftOf="@id/et_password"
+            app:layout_constraintTop_toBottomOf="@id/et_password" />
+
+        <Button
+            android:id="@+id/button_sign_up"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sign_up"
+            android:textSize="14sp"
+            app:layout_constraintLeft_toRightOf="@id/button_sign_in"
+            app:layout_constraintTop_toBottomOf="@id/et_password" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/sign_in_button_google"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_google_icon"
+            android:drawablePadding="9dp"
+            android:text="Google"
+            app:layout_constraintLeft_toLeftOf="@id/button_sign_in"
+            app:layout_constraintTop_toBottomOf="@id/button_sign_in" />
+
+        <include
+            android:id="@+id/signInProgressBar"
+            layout="@layout/layout_progress_bar"
+            android:visibility="gone" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

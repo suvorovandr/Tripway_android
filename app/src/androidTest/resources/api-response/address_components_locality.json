@@ -1,0 +1,37 @@
+[
+  {
+    "long_name" : "6",
+    "short_name" : "6",
+    "types" : [ "street_number" ]
+  },
+  {
+    "long_name" : "Wilhelm-Erben-Straße",
+    "short_name" : "Wilhelm-Erben-Straße",
+    "types" : [ "route" ]
+  },
+  {
+    "long_name" : "Salzburg",
+    "short_name" : "Salzburg",
+    "types" : [ "locality", "political" ]
+  },
+  {
+    "long_name" : "Salzburg",
+    "short_name" : "Salzburg",
+    "types" : [ "administrative_area_level_2", "political" ]
+  },
+  {
+    "long_name" : "Salzburg",
+    "short_name" : "Salzburg",
+    "types" : [ "administrative_area_level_1", "political" ]
+  },
+  {
+    "long_name" : "Австрия",
+    "short_name" : "AT",
+    "types" : [ "country", "political" ]
+  },
+  {
+    "long_name" : "5020",
+    "short_name" : "5020",
+    "types" : [ "postal_code" ]
+  }
+]

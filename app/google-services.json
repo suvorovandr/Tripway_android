@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1078993784452",
+    "firebase_url": "https://tripway-1584816312577.firebaseio.com",
+    "project_id": "tripway-1584816312577",
+    "storage_bucket": "tripway-1584816312577.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1078993784452:android:5afdc7f3084b5426287cd1",
+        "android_client_info": {
+          "package_name": "com.tiparo.tripway"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1078993784452-fkfikfnk42po9kpde7ar6e0ob4nia1cj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.tiparo.tripway",
+            "certificate_hash": "5495283b8e3343ea5254ccd32121c819e445bd68"
+          }
+        },
+        {
+          "client_id": "1078993784452-ttkt56nc69ao0gcljqvgdna1lv7ft673.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD2PfXFMNBpW5cKN-lrjM8P-DLTexfk3pQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1078993784452-shqks67rp45r7pt0e0r132ou2vfc884a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

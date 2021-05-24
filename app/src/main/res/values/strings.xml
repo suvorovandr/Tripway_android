@@ -1,0 +1,71 @@
+<resources>
+    <string name="app_name">Tripway</string>
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="server_client_id">1078993784452-shqks67rp45r7pt0e0r132ou2vfc884a.apps.googleusercontent.com</string>
+
+
+    <string name="CANT_GET_GOOGLE_AUTH_TOKEN">Не удалось получить авторизационные данные с вашего Google аккаунта</string>
+    <string name="CANT_AUTH_BACKEND">Не удалось авторизоваться на сервере. Попробуйте еще или повторите попытку позже</string>
+    <string name="SUCCESS_SIGNIN">Авторизация прошла успешно</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="fragment_discovery_label">Tripway</string>
+    <string name="fragment_login_label">Авторизация</string>
+    <string name="fragment_post_point_list_label">Добавление поинта</string>
+    <string name="fragment_post_point_map_label">Введите адрес</string>
+    <string name="fragment_post_point_photos_label">Выберите фотки</string>
+    <string name="fragment_post_point_description_label">Описание</string>
+
+    <string name="title_home">Популярная лента</string>
+    <string name="title_add_new_trip">Добавление</string>
+    <string name="title_profile">Профиль</string>
+
+    <string name="home_empty_trip_message1">Тут пока пусто...</string>
+    <string name="home_empty_trip_message2">Создайте ваш первый трип</string>
+
+    <!-- POST NEW POINT -->
+    <string name="label_add_new_trip">Создать новый трип</string>
+    <string name="post_point_add_description_hint">Опишите это место</string>
+    <string name="post_point_add_trip_name_hint">Придумайте название трипу</string>
+    <string name="publishPoint">Сохранить</string>
+    <string name="snackbar_empty_description_post_message">Описание не может быть пустым</string>
+    <string name="snackbar_empty_trip_name_post_message">Название трипа не может быть пустым</string>
+    <!--............... -->
+
+    <string name="loading_trips_error">Не удалось загрузить трипы</string>
+    <string name="loading_trip_error">Не удалось загрузить трип</string>
+    <string name="tripcardimage">tripCardImage</string>
+    <string name="snackbar_post_point_saving">Новый поинт сохраняется, ожидайте, пожалуйста</string>
+    <string name="snackbar_post_poin_saved">Сохранили!</string>
+    <string name="title_search">Поиск</string>
+    <string name="search_trip">Поиск по трипам</string>
+
+    <string name="deleteTrip">Удалить трип</string>
+    <string name="deletePoint">Удалить поинт</string>
+    <string name="delete_trip_failed">Не удалось удалить трип</string>
+    <string name="delete_point_failed">Не удалось удалить этот поинт</string>
+    <string name="password">Пароль</string>
+    <string name="sign_in">Войти</string>
+    <string name="sign_up">Создать аккаунт</string>
+    <string name="exit">Выход</string>
+    <string name="email">Email</string>
+    <string name="nickname">Никнейм</string>
+    <string name="create_account">Создать аккаунт</string>
+    <string name="email_password">Email и пароль</string>
+    <!-- PROFILE HOME PAGE -->
+    <string name="trips">Маршруты</string>
+    <string name="followers">Подписчики</string>
+    <string name="following">Подписки</string>
+    <string name="Default_Locale">Moscow</string>
+    <string name="edit_profile_btn">Редактировать профиль</string>
+    <string name="Profile_Nums">0</string>
+</resources>

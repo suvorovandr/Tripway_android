@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include layout="@layout/layout_progress_bar"
+            android:id="@+id/progress_bar"
+            android:visibility="gone"
+            />
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/avatar"
+            android:layout_width="73dp"
+            android:layout_height="73dp"
+            android:layout_marginStart="22dp"
+            android:layout_marginTop="12dp"
+            app:failureImage="@drawable/ic_profile_placeholder"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:roundAsCircle="true"
+            app:roundingBorderColor="@android:color/darker_gray"
+            app:roundingBorderWidth="1dp"
+            fresco:placeholderImage="@drawable/ic_profile_placeholder"
+            tools:src="@drawable/ic_profile_placeholder" />
+
+
+        <TextView
+            android:id="@+id/nickname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="2dp"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toRightOf="@id/avatar"
+            app:layout_constraintTop_toTopOf="@id/avatar"
+            tools:text="Alexis Ffrench" />
+
+        <TextView
+            android:id="@+id/trips_count_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="@string/trips"
+            android:textSize="13sp"
+            app:layout_constraintStart_toStartOf="@+id/nickname"
+            app:layout_constraintTop_toBottomOf="@+id/nickname" />
+
+        <TextView
+            android:id="@+id/followers_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:text="@string/followers"
+            android:textSize="13sp"
+            app:layout_constraintLeft_toRightOf="@id/trips_count_label"
+            app:layout_constraintTop_toTopOf="@id/trips_count_label" />
+
+        <TextView
+            android:id="@+id/following_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:text="@string/following"
+            android:textSize="13sp"
+            app:layout_constraintLeft_toRightOf="@id/followers_label"
+            app:layout_constraintTop_toTopOf="@id/trips_count_label" />
+
+        <TextView
+            android:id="@+id/trips_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="13sp"
+            app:layout_constraintLeft_toLeftOf="@id/trips_count_label"
+            app:layout_constraintRight_toRightOf="@id/trips_count_label"
+            app:layout_constraintTop_toBottomOf="@id/trips_count_label"
+            tools:text="23" />
+
+        <TextView
+            android:id="@+id/subscribersCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="13sp"
+            app:layout_constraintLeft_toLeftOf="@id/followers_label"
+            app:layout_constraintRight_toRightOf="@id/followers_label"
+            app:layout_constraintTop_toBottomOf="@id/followers_label"
+            tools:text="23" />
+
+        <TextView
+            android:id="@+id/subscriptionsCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="13sp"
+            app:layout_constraintLeft_toLeftOf="@id/following_label"
+            app:layout_constraintRight_toRightOf="@id/following_label"
+            app:layout_constraintTop_toBottomOf="@id/following_label"
+            tools:text="23" />
+
+        <TextView
+            android:id="@+id/edit_profile_btn"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginHorizontal="9dp"
+            android:layout_marginTop="18dp"
+            android:background="@drawable/edit_profile_btn"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:text="@string/edit_profile_btn"
+            android:textSize="13sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/avatar" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/trips"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="18dp"
+            android:clipToPadding="false"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edit_profile_btn"
+            app:spanCount="2"
+            tools:listitem="@layout/item_content_profile" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

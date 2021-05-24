@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#4285F4</color>
+    <color name="colorAccent">#CDDC39</color>
+    <color name="colorIconColor">#4F4F4F</color>
+
+    <color name="colorBars">#fff</color>
+
+    <color name="colorText">#000</color>
+    <color name="colorTextHint">#BF000000</color>
+    <color name="colorTextHintLight">#80000000</color>
+    <color name="colorTextOnButton">#F2F2F2</color>
+    <color name="colorBackground">#F2F2F2</color>
+
+    <color name="colorGray">#777777</color>
+</resources>

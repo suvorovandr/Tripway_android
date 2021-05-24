@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="androidx.lifecycle.LiveData" />
+
+        <import type="android.view.View" />
+
+        <import type="com.tiparo.tripway.utils.Resource" />
+
+        <variable
+            name="locationNameResult"
+            type="com.tiparo.tripway.utils.Resource" />
+
+        <variable
+            name="locationName"
+            type="String" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".posting.ui.PostPointMapFragment">
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="8dp"
+            android:visibility="@{locationNameResult.status == Resource.Status.LOADING? View.VISIBLE: View.GONE}" />
+
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/map_search"
+            android:name="com.google.android.libraries.places.widget.AutocompleteSupportFragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="12dp"
+            android:background="@color/colorBars"
+            android:elevation="@dimen/bars_elevation" />
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/map"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:background="@color/colorBars"
+            android:orientation="horizontal"
+            android:elevation="@dimen/bars_elevation"
+            android:padding="@dimen/vertical_margin">
+
+            <TextView
+                android:id="@+id/address"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="16dp"
+                android:textColor="@color/colorText"
+                android:textSize="18sp"
+                android:textStyle="normal"
+                android:text="@{locationName}"
+                />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/saveLocationBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top|end"
+                android:src="@drawable/ic_done"
+                android:tint="@color/colorTextOnButton"
+                app:backgroundTint="?colorPrimary"
+                app:elevation="2dp"
+                app:fabSize="normal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:rippleColor="?colorPrimaryDark"
+                tools:background="?colorPrimary"
+                tools:ignore="elevation" />
+        </LinearLayout>
+    </FrameLayout>
+</layout>
