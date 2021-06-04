@@ -66,6 +66,6 @@
     <string name="followers">Подписчики</string>
     <string name="following">Подписки</string>
     <string name="Default_Locale">Moscow</string>
-    <string name="edit_profile_btn">Редактировать профиль</string>
+    <string name="sign_out">Выйти из профиля</string>
     <string name="Profile_Nums">0</string>
 </resources>

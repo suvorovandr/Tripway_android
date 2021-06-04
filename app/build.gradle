@@ -19,7 +19,7 @@ android {
         def properties = new Properties()
         properties.load(project.rootProject.file("local.properties").newDataInputStream())
         def localServerHost = properties.getProperty("serverHost")
-        def serverHost = "http://arcane-mountain-80830.herokuapp.com:80/"
+        def serverHost = "http://tripway-v2.herokuapp.com:80/"
         if (localServerHost != null)
             serverHost = localServerHost
 

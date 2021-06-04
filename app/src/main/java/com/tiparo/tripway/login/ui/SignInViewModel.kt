@@ -1,6 +1,7 @@
 package com.tiparo.tripway.login.ui
 
 import android.app.Application
+import android.view.View
 import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.ViewModel
 import com.google.android.gms.auth.api.signin.GoogleSignIn
@@ -13,6 +14,7 @@ import com.tiparo.tripway.R
 import com.tiparo.tripway.login.domain.AuthRepository
 import timber.log.Timber
 import javax.inject.Inject
+
 
 class SignInViewModel @Inject constructor(
     private val authRepository: AuthRepository,
@@ -126,8 +128,9 @@ class SignInViewModel @Inject constructor(
             }
     }
 
-    fun signOut() {
+   fun signOut() {
         auth.signOut()
+
     }
 
 //    fun handleSignInGoogleResult(task: Task<GoogleSignInAccount>?) {
